@@ -53,7 +53,7 @@ class ParserProfile(BaseLogger):
         profile["company"] = self._parse_tag_text_by_itemprop(soup, "worksFor")
         profile["location"] = self._parse_tag_text_by_itemprop(soup, "homeLocation")
         profile["blog"] = self._parse_tag_text_by_itemprop(soup, "url")
-        profile["email"] = self._parse_tag_string_by_class(soup, "email")
+        profile["email"] = self._parse_tag_text_by_itemprop(soup, "email")
         profile["join_at"] = self._parse_tag_datetime_by_class(soup, "join-date")
         profile["follower"], like["follower"] = self._parse_tag_count_and_link(soup, "Follower")
         profile["following"], like["following"] = self._parse_tag_count_and_link(soup, "Following")
